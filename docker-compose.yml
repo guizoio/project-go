@@ -1,0 +1,14 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    container_name: db_postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: awesomeProject
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - .data/docker/postgres:/var/lib/postgresql/data
