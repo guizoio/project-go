@@ -15,7 +15,7 @@ func NewUserRepository(db *gorm.DB) UserRepository {
 
 func (u UserRepository) List() ([]entities.User, error) {
 	var user []entities.User
-	result := u.db.Find(&user)
+	result := u.db.Preload("Address").Find(&user)
 	if result.Error != nil {
 		return user, result.Error
 	}
