@@ -33,6 +33,7 @@ func StartHttp(ctx context.Context, containerDI *infrastructure.ContainerDI) {
 
 	app.Get("/check", containerDI.CheckHanler.Check)
 	app.Get("/user/list", containerDI.HandlerUser.List)
+	app.Post("/user/create", containerDI.HandlerUser.Create)
 
 	err := app.Listen(":8080")
 	if err != nil {

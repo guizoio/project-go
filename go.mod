@@ -4,6 +4,7 @@ go 1.18
 
 require (
 	github.com/gofiber/fiber/v2 v2.33.0
+	github.com/gofrs/uuid v4.0.0+incompatible
 	github.com/joho/godotenv v1.4.0
 	github.com/spf13/cobra v1.4.0
 	gorm.io/driver/postgres v1.3.5

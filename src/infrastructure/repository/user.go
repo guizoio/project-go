@@ -21,3 +21,10 @@ func (u UserRepository) List() ([]entities.User, error) {
 	}
 	return user, nil
 }
+
+func (u UserRepository) Create(data entities.User) error {
+	if err := u.db.Create(&data); err != nil {
+		return err.Error
+	}
+	return nil
+}
